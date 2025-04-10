@@ -1086,10 +1086,7 @@ def get_product(product_id):
     
     finally:
         if conn:
-            conn.close()
-
-# Add retailer checkout endpoint
-add_retailer_checkout_endpoint(app)
+            conn.close())
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 3000))
