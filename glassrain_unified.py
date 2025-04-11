@@ -1086,7 +1086,7 @@ def get_product(product_id):
     
     finally:
         if conn:
-            conn.close())
+            conn.close()
 
     port = int(os.environ.get('PORT', 3000))
     debug = os.environ.get('FLASK_ENV') == 'development'
