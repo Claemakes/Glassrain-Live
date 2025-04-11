@@ -67,52 +67,8 @@ init_ai_routes(app)
 
 @app.route('/')
 def index():
-    """Main landing page for GlassRain - Address Entry"""
-    try:
-        logger.info("Rendering address_entry.html template")
-        templates_dir = 
-os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
-        logger.info(f"Templates directory: {templates_dir}")
-        if os.path.exists(templates_dir):
-            logger.info(f"Files in templates directory: 
-{os.listdir(templates_dir)}")
-        return render_template('address_entry.html')
-    except Exception as e:
-        logger.error(f"Error rendering landing page: {str(e)}")
-        return """
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>GlassRain - Address Entry</title>
-            <meta name="viewport" content="width=device-width, 
-initial-scale=1.0">
-            <style>
-                body { background-color: #121212; color: #e0e0e0; 
-font-family: Arial, sans-serif; margin: 0; padding: 20px; display: flex; 
-flex-direction: column; align-items: center; justify-content: center; 
-min-height: 100vh; }
-                .container { max-width: 800px; text-align: center; }
-                h1 { color: #FFD700; }
-                input { padding: 12px; margin: 10px 0; width: 100%; 
-background-color: #2a2a2a; border: 1px solid #444; color: #e0e0e0; }
-                button { background-color: #FFD700; color: #121212; 
-border: none; padding: 12px 24px; cursor: pointer; font-weight: bold; 
-margin-top: 20px; }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <h1>GlassRain</h1>
-                <h2>Enter Your Address</h2>
-                <form action="/process_address" method="post">
-                    <input type="text" name="address" placeholder="Enter 
-your address..." required>
-                    <button type="submit">Build</button>
-                </form>
-            </div>
-        </body>
-        </html>
-        """
+    """Simple HTML status page for GlassRain"""
+    return render_template('index.html')
 
 @app.route('/api/status')
 def status():
