@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: glassrain
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn glassrain_unified:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PORT
+        value: 3000
