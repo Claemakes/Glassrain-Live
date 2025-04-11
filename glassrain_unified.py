@@ -68,7 +68,7 @@ init_ai_routes(app)
 @app.route('/')
 def index():
     """Simple HTML status page for GlassRain"""
-    return render_template('landing.html')
+    return render_template('index.html')
 
 @app.route('/api/status')
 def status():
